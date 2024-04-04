@@ -78,7 +78,7 @@ export default function HomePage() {
       return;
     }
     if (atm) {
-      let tx = await atm.withdraw(inputValue);
+      let tx = await atm.withdraw(ethers.utils.parseEther(inputValue));
       await tx.wait();
       getBalance();
     }
